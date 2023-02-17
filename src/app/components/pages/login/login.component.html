@@ -1,0 +1,28 @@
+<div class="input-container" fxLayout="column" fxLayoutGap="10"  fxLayoutAlign="space-between ">
+  <div fxLayout="row">
+    <img class="img" src="assets/images/5.jpg" alt="logo">
+    <div class="login" fxFlexOffset="40">Login</div>
+  </div>
+  <!-- <input
+    type="text"
+    placeholder="Email"
+    [(ngModel)]="email"
+  /> -->
+  <mat-form-field appearance="fill"  >
+    <label for="Email">Email:</label>
+    <input  id="Email" matInput  [(ngModel)]="email" >
+  </mat-form-field>
+
+  <!-- <input
+    type="text"
+    placeholder="Password"
+    [(ngModel)]="password"
+  /> -->
+  <mat-form-field appearance="fill" >
+    <label for="Password">Password:</label>
+    <input  id="Password" matInput type="password" [(ngModel)]="password">
+  </mat-form-field>
+  <a mat-fab extended class="login-button" (click)="getLoginDetails()" routerLink="">
+    login
+  </a></div>
+

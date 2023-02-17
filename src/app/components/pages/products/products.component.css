@@ -1,0 +1,12 @@
+.search{
+  border-radius: 15px;
+  margin: 0 auto 0 auto;
+  width: 70%;
+}
+.filter{
+  margin: 0 auto 0 auto;
+}
+
+.filterButton:hover{
+  color: white;
+}

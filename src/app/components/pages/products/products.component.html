@@ -1,0 +1,16 @@
+
+<div fxLayout="column" fxFlexOffset="3" fxFlex="100">
+  <div class="search" fxLayout="row" fxFlexOffset ="5" fxFlex="100">
+    <mat-form-field appearance="fill" fxFlex="grow">
+      <label style="font-weight:bold;" for="title">Search by a keyword:</label>
+      <input  id="title" matInput (keyup)="applyFilter($event)"placeholder="Search" fxFlex="grow">
+    </mat-form-field>
+  </div>
+  <div class="filter" fxLayout="row" fxFlexOffset ="2" fxFlex="100" fxLayoutGap="5">
+    <button class="filterButton" (click)="getAll()" mat-raised-button style="background-color:rgba(251,171,24,255);">All</button>
+    <button class="filterButton" (click)="getAsus()" mat-raised-button style="background-color:rgba(251,171,24,255)">Asus</button>
+    <button class="filterButton" (click)="getHp()" mat-raised-button style="background-color:rgba(251,171,24,255)">Hp</button>
+    <button  class="filterButton" (click)="getMsi()"mat-raised-button style="background-color:rgba(251,171,24,255)">Msi</button>
+  </div>
+  <app-product-card fxFlex="100" [products] = "filteredProducts" fxLayoutOffset = "10"></app-product-card>
+</div>

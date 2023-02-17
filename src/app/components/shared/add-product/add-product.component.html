@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Add product</h1>
+<div mat-dialog-content fxLayout="column" fxLayoutGap="5">
+  <mat-form-field appearance="fill">
+    <label for="id">Id:</label>
+    <input #id id="id" matInput >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label for="title">Title:</label>
+    <input #title id="title" matInput >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label  for="description">Description:</label>
+    <textarea class="txtArea" rows="5" #description  id="description" matInput ></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="price">Price:</label>
+    <input #price id="price" matInput >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="rating">Rating:</label>
+    <input #rating id="rating" matInput >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="brand">Brand:</label>
+    <input #brand id="brand" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="screenSize">Screen size:</label>
+    <input #screenSize id="screenSize" matInput >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="color">Color:</label>
+    <input #color id="color" matInput >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="batteryLife">Battery life:</label>
+    <input #batteryLife id="batteryLife" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="category">Category:</label>
+    <input #category id="category" matInput >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label  for="thumbnail">Thumbnail:</label>
+    <input #thumbnail id="thumbnail" matInput >
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click) = "addProduct({id:id.value, title:title.value, description:description.value, price:price.value, rating: rating.value, brand:brand.value, screenSize:screenSize.value, color:color.value, batteryLife:batteryLife.value, category:category.value, thumbnail:thumbnail.value})" cdkFocusInitial>Add</button>
+</div>

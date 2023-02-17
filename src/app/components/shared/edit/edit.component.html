@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Edit product</h1>
+<div mat-dialog-content fxLayout="column" fxLayoutGap="5">
+  <mat-form-field appearance="fill">
+    <label for="id">Id:</label>
+    <input #id id="id" matInput [value]="product.id">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label for="title">Title:</label>
+    <input #title id="title" matInput [value]="product.title" >
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label  for="description">Description:</label>
+    <textarea class="txtArea" rows="5" #description  id="description" matInput [value]="product.description"></textarea>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="price">Price:</label>
+    <input #price id="price" matInput [value]="product.price">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="rating">Rating:</label>
+    <input #rating id="rating" matInput [value]="product.rating">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="brand">Brand:</label>
+    <input #brand id="brand" matInput [value]="product.brand">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="screenSize">Screen size:</label>
+    <input #screenSize id="screenSize" matInput [value]="product.screenSize">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="color">Color:</label>
+    <input #color id="color" matInput [value]="product.color">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="batteryLife">Battery life:</label>
+    <input #batteryLife id="batteryLife" matInput [value]="product.batteryLife">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label for="category">Category:</label>
+    <input #category id="category" matInput [value]="product.category">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <label  for="thumbnail">Thumbnail:</label>
+    <input #thumbnail id="thumbnail" matInput [value]="product.thumbnail">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click) = "editProduct({id:id.value, title:title.value, description:description.value, price:price.value, rating: rating.value, brand:brand.value, screenSize:screenSize.value, color:color.value, batteryLife:batteryLife.value, category:category.value, thumbnail:thumbnail.value})" cdkFocusInitial>Edit</button>
+</div>

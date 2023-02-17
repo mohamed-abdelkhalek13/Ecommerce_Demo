@@ -1,0 +1,30 @@
+<div class="nav-container" fxLayout="row" fxLayoutAlign="space-between center" >
+
+  <img fxFlexOffset="5" class="img" src="assets/images/5.jpg" alt="logo">
+  <div fxLayout="row" fxLayoutGap="10">
+    <a *ngIf="admin == false && user == false" mat-fab extended class="login" routerLink="/login">
+      Login
+    </a>
+    <a *ngIf="admin == true || user == true" mat-fab extended class="login" (click)="logout()" routerLink="/">
+      sign out
+    </a>
+    <div class="name" *ngIf="admin==true">Hello, admin@123</div>
+    <div class="name" *ngIf="user==true">Hello, user@123</div>
+    <div *ngIf= "admin == false && user == false" class="registerDiv" fxFlexOffset="3">Doesn't have an account?<a fxLayout="row"  class="register" routerLink="/login">Register.</a></div>
+  </div>
+  <a *ngIf="admin == false" fxFlexOffset="15" mat-fab extended class="login" routerLink="/">
+    Home
+  </a>
+  <a *ngIf="admin == true" fxFlexOffset="15" mat-fab extended  class="login" routerLink="/dashboard">
+    Dashboard
+  </a>
+
+  <a mat-fab extended class="login" routerLink="/products">
+    Products
+  </a>
+  <a *ngIf="admin == false" mat-fab extended class="login" routerLink="/cart">
+    Cart {{"("+cartItems+")"}}
+  </a>
+
+  <div fxLayout="column"></div>
+</div>

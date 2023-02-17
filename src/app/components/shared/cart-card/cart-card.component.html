@@ -1,0 +1,26 @@
+<div fxFlexOffset="30" fxLayout="column">
+  <h2 fxFlexOffset="10" *ngIf="!productsList[0]">Your Cart is empty</h2>
+  <div  fxFlexOffset="5" fxLayout="row" *ngFor="let product of productsList" >
+    <div fxLayout="column">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <img width="5rem" height="5rem" mat-card-sm-image src="{{product.thumbnail}}" >
+          <mat-card-title-group>
+            <mat-card-title  fxFlexOffset="6">title: {{product.title}}</mat-card-title>
+            <mat-card-subtitle fxFlexOffset="6">price: {{product.price}}$</mat-card-subtitle>
+            <div fxFlexOffset="6">quantity:{{product.quantity}}</div>
+          </mat-card-title-group>
+        </mat-card-header>
+
+      </mat-card>
+    </div>
+    <div fxFlexOffset="10" fxLayout="column" >
+      <div fxFlexOffset="6" fxLayout="row">
+        <button (click)="addOne(product.id)">+</button>
+        <button (click)="removeOne(product.id)">-</button>
+      </div>
+    </div>
+  </div>
+  <h1 class="totalPrice" fxFlexOffset="10" *ngIf="totalPrice != 0">Total Price:{{totalPrice}} $</h1>
+</div>
+
